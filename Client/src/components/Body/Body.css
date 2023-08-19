@@ -1,0 +1,116 @@
+.notes__wrapper{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.notes__header{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.notes__title p{
+    color: white;
+}
+
+.notes__title div{
+    background-color: white;
+    height: 1px;
+    width: 30px;
+    margin-top: 2px;
+}
+
+.notes__header span{
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+}
+
+.notes__body{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 140px;
+    background-color: #283542;
+    padding: 10px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 500ms;
+
+}
+
+.notes__body:hover{
+    transform: scale(1.02);
+}
+
+.notes__content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notes__desc{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notes__desc p{
+    color: white;
+}
+
+.notes__desc span{
+    color: rgb(154, 154, 154);
+    font-size: 14px;
+}
+
+.note_date{
+    position: relative;
+    color: white;
+    font-size: 11px;
+    color: #d1d1d1;
+}
+
+.delete__note{
+    position: absolute;
+    background-color: tomato;
+    top: 89%;
+    left: 89%;
+    border-radius: 20px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 500ms;
+}
+
+.delete__note span{
+    position: relative;
+    top: 1.5px;
+    color: white;
+}
+
+.delete__note:hover{
+    cursor: pointer;
+    background-color: rgb(255, 54, 18);
+}
+
+.no_notes{
+    position: relative;
+    display: flex;
+    color: white;
+    background-color: #283542;
+    height: 50px;
+    width: 130px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}

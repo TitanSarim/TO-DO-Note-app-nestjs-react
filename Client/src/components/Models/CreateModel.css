@@ -1,0 +1,145 @@
+.create__model__container{
+    position: relative;
+    width: 350px;
+    background-color: #283542;
+    border-radius: 12px;
+}
+
+.create__model__wrapper{
+    position: relative;
+    padding: 15px 20px;
+}
+
+.form__container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form__header{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form__header p{
+    color: white;
+    font-size: 19px;
+}
+
+.form__header span{
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+}
+
+.form__body{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form__input{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+
+.inputGroup{
+    width: 90%;
+}
+
+.inputGroup input{
+    width: 90%;
+    height: 35px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgb(146, 146, 146);
+    padding: 3px 5px;
+    color: white;
+    font-size: 17px;
+    outline: none;
+}
+
+.inputGroup textarea{
+    max-width: 90%;
+    min-width: 91%;
+    max-height: 300px;
+    min-height: 240px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgb(146, 146, 146);
+    padding: 3px 5px;
+    color: white;
+    font-size: 17px;
+    outline: none;
+}
+
+.char_limit{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2px;
+    padding-right: 12px;
+}
+
+.char_limit span{
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+}
+
+.char_limit p{
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+}
+
+.char_error p{
+    font-size: 12px;
+    color: tomato;
+}
+
+.model__footer{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 14px;
+    padding: 0px 26px 0px 0px;
+}
+
+.model__footer input{
+    width: 80px;
+    height: 36px;
+    border-radius: 6px;
+    border: none;
+    background: royalblue;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 500ms;
+}
+
+.model__footer input:hover{
+    background: rgb(65, 110, 244);
+    transform: scale(1.02);
+}
+
+.close__btn{
+    width: 80px;
+    height: 36px;
+    border-radius: 6px;
+    border: none;
+    background: tomato;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 500ms;
+}

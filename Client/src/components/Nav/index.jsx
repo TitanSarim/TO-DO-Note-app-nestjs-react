@@ -1,21 +1,17 @@
 import React from 'react'
 
 import Search from './Search'
-import Avatar from './Avatar'
 
 
 import './Nav.css'
 
-const Nav = () => {
+// eslint-disable-next-line react/prop-types
+const Nav = ({onSearch}) => {
   return (
     <div className='nav__container'>
 
         <div>
-            <Search/>
-        </div>
-
-        <div>
-            <Avatar/>
+            <Search onSearch={onSearch}/>
         </div>
 
 
