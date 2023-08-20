@@ -6,23 +6,14 @@ export default defineConfig({
   plugins: [react()],
 
   
-  // server:{
-  //     proxy:{
-  //       "/api/v1":{ 
-  //       target: "https://todo-nestjs-sarim.vercel.app",
-  //       changeOrigin: true,
-  //       secure: false,
-  //     }
-  //   }
-  // },
+  server:{
+      proxy:{
+        "/api/v1":{ 
+        target: "http://localhost:3000",
+        secure: false,
+      }
+    }
+  },
 
 })
 
-
-// proxy:{
-//   "/api/v1":{ 
-//   target: "https://todo-nestjs-sarim.vercel.app",
-//   changeOrigin: true,
-//   secure: false,
-// }
-// }
