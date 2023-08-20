@@ -2,8 +2,8 @@
 import React,{useState, useEffect, useRef} from 'react'
 import {useDispatch} from 'react-redux';
 import {createNote} from '../../action/notesAction'
-
-
+import { useAlert } from 'react-alert';
+import Loader from '../Body/Loader'
 import './CreateModel.css'
 
 
@@ -12,6 +12,7 @@ import './CreateModel.css'
 const CreateModel = ({isOpen, onClose, color}) => {
 
     const dispatch = useDispatch();
+    const alert = useAlert()
 
     const [characterCount, setCharacterCount] = useState(0);
     const [submitted, setSubmitted] = useState(false);
@@ -38,22 +39,27 @@ const CreateModel = ({isOpen, onClose, color}) => {
         if (characterCount < 20) {
             setShowError(true);
           } else if(characterCount > 20) {
+            
             setShowError(false);
+
+            const myForm = {
+              title: title,
+              content :content,
+              category: displayText
+            }
+    
+            console.log(myForm);
+    
+            dispatch(createNote(myForm))
+            alert.success("Note Created Successfully")
+            
+            setTimeout(() => {
+              window.location.reload();
+          }, 2000);
+
           }else{
             setSubmitted(true);
           }
-        
-        const myForm = {
-          title: title,
-          content :content,
-          category: displayText
-        }
-
-        console.log(myForm);
-
-        dispatch(createNote(myForm))
-        onClose()
-        window.location.reload();
     };
 
     // color crosponds to note type

@@ -42,15 +42,16 @@ const DeleteModel = ({isOpen, onClose, note}) => {
         }
 
         if(isDeleted){
-            alert.success("Note Deleted Successfully");
             dispatch({type: DELETE_NOTE_RESET})
         }
     }, [dispatch, alert, deleteError, isDeleted, onClose])
 
     const deleteNoteHandler = (id) => {
         dispatch(deleteNote(id))
-        onClose()
-        window.location.reload();
+        alert.success("Note Deleted Successfully");
+        setTimeout(() => {
+          window.location.reload();
+      }, 2000);
     }
 
     if(!isOpen) return null

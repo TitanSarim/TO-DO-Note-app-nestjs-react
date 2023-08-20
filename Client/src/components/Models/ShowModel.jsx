@@ -53,7 +53,6 @@ const ShowModel = ({ isOpen, onClose, note }) => {
         }
 
         if(isUpdated){
-            alert.success("Noted Updated Successfully")
             dispatch({type: UPDATE_NOTE_RESET})
         }
 
@@ -108,8 +107,10 @@ const ShowModel = ({ isOpen, onClose, note }) => {
             }
 
             dispatch(updateNote(note._id, myForm))
-            onClose();
-            window.location.reload();
+            setTimeout(() => {
+              alert.success("Noted Updated Successfully")
+              window.location.reload();
+            }, 2000);
           }else{
             setSubmitted(true);
           }

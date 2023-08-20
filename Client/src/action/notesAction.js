@@ -25,7 +25,7 @@ export const getNotes = () => async(dispatch) => {
         
         dispatch({type: ALL_NOTES_REQUEST})
 
-        let link = `/api/v1/notes`;
+        let link = `https://todo-nestjs.vercel.app/api/v1/notes`;
 
         const {data} = await axios.get(link);
         dispatch({
@@ -53,7 +53,9 @@ export const createNote = (myForm) => async (dispatch) => {
 
         const config = { headers: { "Content-Type": "application/json" } };
 
-        const {data} = await axios.post(`/api/v1/notes`,
+        let link = `https://todo-nestjs.vercel.app/api/v1/notes`;
+
+        const {data} = await axios.post(link,
             myForm,
             config
         )
@@ -77,7 +79,7 @@ export const updateNote = (id, myForm) => async (dispatch) => {
 
         const config = { headers: { "Content-Type": "application/json" } };
 
-        const {data} = await axios.put(`/api/v1/notes/${id}`,
+        const {data} = await axios.put(`https://todo-nestjs.vercel.app/api/v1/notes/${id}`,
             myForm,
             config
         )
@@ -99,7 +101,7 @@ export const deleteNote = (id) => async(dispatch) => {
         
         dispatch({type: DELETE_NOTE_REQUEST})
 
-        const {data} = await axios.delete(`/api/v1/notes/${id}`);
+        const {data} = await axios.delete(`https://todo-nestjs.vercel.app/api/v1/notes/${id}`);
 
         dispatch({
             type: DELETE_NOTE_SUCCESS,
