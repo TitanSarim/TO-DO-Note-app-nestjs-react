@@ -11,7 +11,9 @@ import { NotesModule } from './notes/notes.module';
       envFilePath: '.env.development',
       isGlobal: true,
     }),
-    MongooseModule.forRoot(process.env.DB_URI),
+    MongooseModule.forRoot(
+      'mongodb+srv://sarimxahid:1412@cluster0.kaxoprv.mongodb.net/notes',
+    ),
     NotesModule,
   ],
   controllers: [AppController],
