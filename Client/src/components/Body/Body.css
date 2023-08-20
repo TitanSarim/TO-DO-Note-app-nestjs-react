@@ -34,7 +34,8 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 140px;
+    width: 160px;
+    height: 180px;
     background-color: #283542;
     padding: 10px 12px;
     border-radius: 6px;
@@ -67,6 +68,7 @@
 .notes__desc span{
     color: rgb(154, 154, 154);
     font-size: 14px;
+    height: 95px;
 }
 
 .note_date{

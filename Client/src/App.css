@@ -43,3 +43,13 @@
   top: 50%;
   left: 43%;
 }
+
+.loader_container{
+  position: relative;
+  height: 100%;
+  left: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

@@ -35,8 +35,8 @@ export class NotesService {
         }
       : {};
 
-    const notes = await this.noteModel.find({ ...keyword });
-    return notes;
+    const allNotes = await this.noteModel.find({ ...keyword });
+    return allNotes;
   }
 
   // Get Note by ID = Get /note/:id
