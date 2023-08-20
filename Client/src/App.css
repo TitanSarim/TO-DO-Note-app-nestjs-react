@@ -53,3 +53,117 @@
   justify-content: center;
 }
 
+@media only screen and (max-width: 1650px){
+  .loader_container{
+    position: relative;
+    left: 550px;
+  }
+}
+
+
+@media only screen and (max-width: 1280px){
+  .loader_container{
+    position: relative;
+    left: 390px;
+  }
+
+  .models__container{
+    position: absolute;
+    top: 20%;
+    left: 36%;
+  }
+
+}
+
+
+@media only screen and (max-width: 1025px){
+  .loader_container{
+    position: relative;
+    left: 390px;
+  }
+
+  .models__container{
+    position: absolute;
+    top: 20%;
+    left: 33%;
+  }
+
+}
+
+
+
+@media only screen and (max-width: 913px){
+  .loader_container{
+    position: relative;
+    left: 270px;
+  }
+
+  .models__container{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+  }
+
+}
+
+
+@media only screen and (max-width: 820px){
+  .models__container{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+  }
+}
+
+
+@media only screen and (max-width: 740px){
+  .loader_container{
+    position: relative;
+    left: 200px;
+  }
+}
+
+
+
+@media only screen and (max-width: 545px){
+  .models__container{
+    position: absolute;
+    top: 15%;
+    left: 19%;
+  }
+}
+
+
+@media only screen and (max-width: 475px){
+  .loader_container{
+    position: relative;
+    left: 10px;
+  }
+
+  .app__body{
+    gap: 50px;
+  }
+
+  .models__container{
+    position: absolute;
+    top: 11%;
+    left: 5%;
+  }
+}
+
+@media only screen and (max-width: 420px){
+  .models__container{
+    position: absolute;
+    top: 11%;
+    left: 6%;
+  }
+}
+
+
+@media only screen and (max-width: 400px){
+  .models__container{
+    position: absolute;
+    top: 11%;
+    left: 4%;
+  }
+}

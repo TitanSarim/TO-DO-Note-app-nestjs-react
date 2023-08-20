@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React,{useState, useEffect} from 'react'
+import React,{useState, useEffect, useRef} from 'react'
 import {useSelector, useDispatch} from 'react-redux';
 import {updateNote, clearErrors} from '../../action/notesAction'
 import { UPDATE_NOTE_RESET } from '../../constants/notesConstants';
@@ -26,6 +26,26 @@ const ShowModel = ({ isOpen, onClose, note }) => {
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
     
+    const modelRef = useRef(null);
+
+    const handleCloseOutsideClick = (event) => {
+      if (modelRef.current && !modelRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
+
+    useEffect(() => {
+        if (isOpen) {
+          document.addEventListener('mousedown', handleCloseOutsideClick);
+        } else {
+          document.removeEventListener('mousedown', handleCloseOutsideClick);
+        }
+    
+        return () => {
+          document.removeEventListener('mousedown', handleCloseOutsideClick);
+        };
+      }, [isOpen]);
+
     useEffect(() => {
         if(updateError){
             alert.error(updateError)
@@ -105,7 +125,7 @@ const ShowModel = ({ isOpen, onClose, note }) => {
 
    <div className={`create__model__container ${isOpen ? 'visible' : ''}`}>
 
-        <div className='create__model__wrapper' onClick={(e) => e.stopPropagation()}>
+        <div className='create__model__wrapper' onClick={(e) => e.stopPropagation()} ref={modelRef}>
 
             <div className='form__container'>
 

@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React,{useState, useEffect} from 'react'
+import React,{useState, useEffect, useRef} from 'react'
 import {useDispatch} from 'react-redux';
 import {createNote} from '../../action/notesAction'
 
@@ -24,7 +24,13 @@ const CreateModel = ({isOpen, onClose, color}) => {
     })
 
     const {title, content} = note
+    const modelRef = useRef(null);
 
+    const handleCloseOutsideClick = (event) => {
+      if (modelRef.current && !modelRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -66,6 +72,19 @@ const CreateModel = ({isOpen, onClose, color}) => {
           setDisplayText('');
         }
     }, [color]);
+
+    useEffect(() => {
+      if (isOpen) {
+        document.addEventListener('mousedown', handleCloseOutsideClick);
+      } else {
+        document.removeEventListener('mousedown', handleCloseOutsideClick);
+      }
+  
+      return () => {
+        document.removeEventListener('mousedown', handleCloseOutsideClick);
+      };
+    }, [isOpen]);
+
 
     // model close
     if(!isOpen) return null
@@ -111,7 +130,7 @@ const CreateModel = ({isOpen, onClose, color}) => {
 
     <div className='create__model__container'>
 
-        <div className='create__model__wrapper'>
+        <div className='create__model__wrapper' ref={modelRef}>
 
             <div className='form__container'>
                 

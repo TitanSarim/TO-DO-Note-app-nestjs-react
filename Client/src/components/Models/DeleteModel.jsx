@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import {useSelector, useDispatch} from 'react-redux';
 import {deleteNote, clearErrors} from '../../action/notesAction'
 import { useAlert } from 'react-alert';
@@ -14,8 +14,25 @@ const DeleteModel = ({isOpen, onClose, note}) => {
     const {error: deleteError, isDeleted} = useSelector(state=>state.deleteNote);
 
     
+    const modelRef = useRef(null);
 
+    const handleCloseOutsideClick = (event) => {
+      if (modelRef.current && !modelRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
     
+    useEffect(() => {
+        if (isOpen) {
+          document.addEventListener('mousedown', handleCloseOutsideClick);
+        } else {
+          document.removeEventListener('mousedown', handleCloseOutsideClick);
+        }
+    
+        return () => {
+          document.removeEventListener('mousedown', handleCloseOutsideClick);
+        };
+      }, [isOpen]);
 
     useEffect(() => {
         if(deleteError){
@@ -43,7 +60,7 @@ const DeleteModel = ({isOpen, onClose, note}) => {
   return (
     <div className={`create__model__container ${isOpen ? 'visible' : ''}`}>
 
-        <div className='create__model__wrapper' onClick={(e) => e.stopPropagation()}>
+        <div className='create__model__wrapper' onClick={(e) => e.stopPropagation()} ref={modelRef}>
 
             <div className='form__container'>
 

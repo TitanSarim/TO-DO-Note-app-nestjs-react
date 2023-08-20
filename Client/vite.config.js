@@ -9,10 +9,19 @@ export default defineConfig({
   server:{
     proxy:{
         "/api/v1":{ 
-        target: "https://todo-nestjs-sarim.vercel.app",
+        target: "http://localhost:3000",
         secure: false,
       }
     }
   },
 
 })
+
+
+// proxy:{
+//   "/api/v1":{ 
+//   target: "https://todo-nestjs-sarim.vercel.app",
+//   changeOrigin: true,
+//   secure: false,
+// }
+// }
